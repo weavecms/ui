@@ -1,6 +1,6 @@
 <script>
 	let {
-		class: className = '',
+		class: className = "",
 		variant = "default",
 		size = "default",
 		ref = $bindable(null),
@@ -8,7 +8,7 @@
 		type = "button",
 		children,
 		...restProps
-	} = $props();
+	} = $$props;
 </script>
 
 {#if href}
