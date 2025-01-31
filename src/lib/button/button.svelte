@@ -18,7 +18,7 @@
 		{href}
 		{...restProps}
 	>
-		{@render children?.()}
+		<slot><!-- optional fallback --></slot>
 	</a>
 {:else}
 	<button
@@ -27,7 +27,7 @@
 		{type}
 		{...restProps}
 	>
-		{@render children?.()}
+		<slot><!-- optional fallback --></slot>
 	</button>
 {/if}
 

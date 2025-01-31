@@ -1,23 +1,26 @@
 export default Button;
-type Button = {
-    $on?(type: string, callback: (e: any) => void): () => void;
-    $set?(props: Partial<$$ComponentProps>): void;
+type Button = SvelteComponent<{
+    [x: string]: any;
+}, {
+    [evt: string]: CustomEvent<any>;
+}, {}> & {
+    $$bindings?: string;
 };
-declare const Button: import("svelte").Component<{
-    class?: string;
-    variant?: string;
-    size?: string;
-    ref?: any;
-    href?: any;
-    type?: string;
-    children: any;
-} & Record<string, any>, {}, "ref">;
-type $$ComponentProps = {
-    class?: string;
-    variant?: string;
-    size?: string;
-    ref?: any;
-    href?: any;
-    type?: string;
-    children: any;
-} & Record<string, any>;
+declare const Button: $$__sveltets_2_IsomorphicComponent<{
+    [x: string]: any;
+}, {
+    [evt: string]: CustomEvent<any>;
+}, {}, {}, string>;
+interface $$__sveltets_2_IsomorphicComponent<Props extends Record<string, any> = any, Events extends Record<string, any> = any, Slots extends Record<string, any> = any, Exports = {}, Bindings = string> {
+    new (options: import("svelte").ComponentConstructorOptions<Props>): import("svelte").SvelteComponent<Props, Events, Slots> & {
+        $$bindings?: Bindings;
+    } & Exports;
+    (internal: unknown, props: Props & {
+        $$events?: Events;
+        $$slots?: Slots;
+    }): Exports & {
+        $set?: any;
+        $on?: any;
+    };
+    z_$$bindings?: Bindings;
+}
